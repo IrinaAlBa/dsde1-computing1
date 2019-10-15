@@ -18,6 +18,6 @@ else:
             print("You are right!")
         else:
             continue
-     if num_tries == 3:
+    if num_tries == 3:
         print('You lose.')
     break
