@@ -14,7 +14,7 @@ else:
         guess = input()
         guess = int(guess)
         number = random.randint(1,10)
-        if guess == number
+        if guess == number:
             print("You are right!")
         else:
             continue
