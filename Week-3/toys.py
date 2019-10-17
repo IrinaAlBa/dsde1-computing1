@@ -9,7 +9,7 @@ with functions.
 # to the input and prints the result
 def inc(a):
    number = a + 1
-    print(number)
+   print(number)
 
 
 # write a function that adds 1
