@@ -8,7 +8,7 @@ def period(L,g):
         raise Exception("There is something wrong here...")
     print(x)
     print(y)
-    T = 2*math.pi*((L/g)**0.5)
+    T = 2*math.pi*((L/g)**(1/2))
     print(T)
 
 period(10,5)
