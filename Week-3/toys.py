@@ -55,4 +55,9 @@ def string_repeat(phrase, repeat):
     final_phrase = ""
     for i in range(repeat):
         final_phrase += phrase
+<<<<<<< HEAD
     return final_phrase
+=======
+    return final_phrase
+
+>>>>>>> 691fe0e9aa6d00e67394590d08fc44ab8982d327

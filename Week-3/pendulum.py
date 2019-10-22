@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 691fe0e9aa6d00e67394590d08fc44ab8982d327
 import math
 def period(L,g):
     x = isinstance(L, (int,float))
