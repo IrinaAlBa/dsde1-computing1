@@ -6,7 +6,7 @@ Simple functions performing operations on basic Python data structures.
 
 # Lists
 
-# write a function that returns a list containig the first and the last element
+# write a function that returns a list containing the first and the last element
 # of "the_list". 
 def first_and_last(the_list):
     return []
