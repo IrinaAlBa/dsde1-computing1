@@ -76,15 +76,19 @@ def concatenate_sentences(sentence1, sentence2):
 # dictionary. Return True or False.
 def index_exists(dictionary, key):
     key = input()
-    key in dictionary.keys
+    key in dictionary.keys()
     return
 
 # write a function which checks whether given value is stored in the
 # dictionary. Return True or False.
 def value_exists(dictionary, value):
+    value = input()
+    value in dictionary.values()
     return
 
 # write a function that returns a new dictionary which contains all the values
 # from dictionary1 and dictionary2.
 def merge_dictionaries(dictionary1, dictionary2):
-    return
+    new_dictionary = dictionary1.copy()
+    new_dictionary.update(dictionary2)
+    return new_dictionary
