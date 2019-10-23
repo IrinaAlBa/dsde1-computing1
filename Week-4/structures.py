@@ -24,7 +24,8 @@ def part_reverse(the_list, beginning, end):
     if (end < beginning) or (end >= len(the_list)) or (beginning < 0):
         raise ValueError("improper list indexes")
     new_list = the_list[beginning:end+1]
-    return new_list.reverse()
+    new_list.reverse()
+    return new_list
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
@@ -33,10 +34,11 @@ def repeat_at_index(the_list, index):
     """This function inserts two times the same value into the list."""
     n_times = 2
     value = the_list[index]
+    new_list = the_list.copy()
     while n_times > 0:
-        the_list.insert(index, value)
+        new_list.insert(index, value)
         n_times -= 1
-    return the_list
+    return new_list
 
 
 # Strings
