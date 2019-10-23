@@ -46,18 +46,21 @@ def repeat_at_index(the_list, index):
 # write a function that checks whether the word is a palindrome, i.e. it reads
 # the same forward and backwards
 def palindrome_word(word):
-    return word == word[::-1]
+    word_lower = word.lower()
+    return word_lower == word_lower[::-1]
 
 # write a function that checks whether the sentence is a palindrome, i.e. it
 # read the same forward and backward. Ignore all spaces and other characters
 # like fullstops, commas, etc. Also do not consider whether the letter is
 # capital or not. 
 def palindrome_sentence(sentence):
-    rev_sentence = sentence[::-1]
-    if sentence == rev_sentence:
-        return sentence
-    else:
-        print("This is not a palindrome")
+    sentence_clean = "" 
+    for character in sentence: 
+        if character.isalpha(): 
+            sentence_clean = "".join([sentence_clean, character])
+    sentence_clean = sentence_clean.lower()
+    return sentence_clean == sentence_clean[::-1]
+
 
 # write a function that concatenates two sentences. First the function checks
 # whether the sentence meets the following criteria: it starts with a capital
@@ -67,10 +70,21 @@ def palindrome_sentence(sentence):
 # or at the end and the must be exactly one space after the end of the first
 # sentence. 
 def concatenate_sentences(sentence1, sentence2):
-    sentence1[0].isupper()
-    #have to put in an endswith function somewhere here, but not sure how.
-    #also, have to strip whitespace on the ends of both sentences, then .ljust(1, " ") to the second one.
-    return
+    s1 = sentence1.strip()
+    s2 = sentence2.strip()
+    if (s1 == "") or (s2 == ""):
+        raise ValueError("empty string")
+    if (not s1[0].isupper()) or (not s1[-1] in '.?!'):
+        raise ValueError(
+            f'Sentence {sentence1} is invalid, '
+            f'should start with a capital letter and end with a full stop, question mark, or an exclamation mark'
+        )
+    if (not s2[0].isupper()) or (not s2[-1] in '.?!'):
+        raise ValueError(
+            f'Sentence {sentence2} is invalid, '
+            f'should start with a capital letter and end with a full stop, question mark, or an exclamation mark'
+        )
+    return " ".join([s1, s2])
 
 
 # Dictionaries
