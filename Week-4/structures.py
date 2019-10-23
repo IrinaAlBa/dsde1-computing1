@@ -19,14 +19,17 @@ def first_and_last(the_list):
 # If "end" is greater then "beginning" or any og the indices is out of the
 # list, raise a "ValueError" exception. 
 def part_reverse(the_list, beginning, end):
-    return # hint this is incomplete
-
+    new_list = [the_list[2], the_list[1]]
+    return new_list
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
 def repeat_at_index(the_list, index):
-    return
+    value = the_list[index]
+    from itertools import repeat
+    new_list = the_list.extend(repeat(value, 3))
+    return new_list
 
 
 # Strings
