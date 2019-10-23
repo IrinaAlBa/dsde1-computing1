@@ -85,7 +85,7 @@ class TestSum(unittest.TestCase):
         Test sentence concatenation
         '''
         result = st.concatenate_sentences("First sentence.", "Second sentence.")
-        self.assertEquual(result, "First sentence. Second sentence.")
+        self.assertEqual(result, "First sentence. Second sentence.")
 
      #def test_concatenate_sentences2(self):
      #   '''

@@ -9,6 +9,7 @@ Simple functions performing operations on basic Python data structures.
 # write a function that returns a list containing the first and the last element
 # of "the_list". 
 def first_and_last(the_list):
+    """This function returns a list containing the first and last elements of the_list"""
     new_list = [the_list[0],the_list[-1]]
     return new_list
 
@@ -16,20 +17,26 @@ def first_and_last(the_list):
 # write a function that returns part of "the_list" between indices given by the
 # second and third parameter, respectively. The returned part should be in
 # reverse order than in the original "the_list". 
-# If "end" is greater then "beginning" or any og the indices is out of the
+# If "end" is less than "beginning" or any og the indices is out of the
 # list, raise a "ValueError" exception. 
 def part_reverse(the_list, beginning, end):
-    new_list = [the_list[2], the_list[1]]
-    return new_list
+    """This function reverses the second and third parameter and outputs them in a new list"""
+    if (end < beginning) or (end >= len(the_list)) or (beginning < 0):
+        raise ValueError("improper list indexes")
+    new_list = the_list[beginning:end+1]
+    return new_list.reverse()
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
 def repeat_at_index(the_list, index):
+    """This function inserts two times the same value into the list."""
+    n_times = 2
     value = the_list[index]
-    from itertools import repeat
-    new_list = the_list.extend(repeat(value, 3))
-    return new_list
+    while n_times > 0:
+        the_list.insert(index, value)
+        n_times -= 1
+    return the_list
 
 
 # Strings
