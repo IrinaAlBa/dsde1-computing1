@@ -37,14 +37,24 @@ def repeat_at_index(the_list, index):
 # write a function that checks whether the word is a palindrome, i.e. it reads
 # the same forward and backwards
 def palindrome_word(word):
-    return
+    word = input()
+    rev_word = word[::-1]
+    if word == rev_word:
+        return word
+    else:
+        print("This is not a palindrome")
 
 # write a function that checks whether the sentence is a palindrome, i.e. it
 # read the same forward and backward. Ignore all spaces and other characters
 # like fullstops, commas, etc. Also do not consider whether the letter is
 # capital or not. 
 def palindrome_sentence(sentence):
-    return
+    sentence = input()
+    rev_sentence = sentence[::-1]
+    if sentence == rev_sentence:
+        return sentence
+    else:
+        print("This is not a palindrome")
 
 # write a function that concatenates two sentences. First the function checks
 # whether the sentence meets the following criteria: it starts with a capital
@@ -53,7 +63,10 @@ def palindrome_sentence(sentence):
 # the end.  The concatenated sentence must have no white space at the beginning
 # or at the end and the must be exactly one space after the end of the first
 # sentence. 
-def concatenate_sentences(sentenece1, sentence2):
+def concatenate_sentences(sentence1, sentence2):
+    sentence1[0].isupper()
+    #have to put in an endswith function somewhere here, but not sure how.
+    #also, have to strip whitespace on the ends of both sentences, then .ljust(1, " ") to the second one.
     return
 
 
@@ -62,6 +75,8 @@ def concatenate_sentences(sentenece1, sentence2):
 # write a function that checks whether there is a record with given key in the
 # dictionary. Return True or False.
 def index_exists(dictionary, key):
+    key = input()
+    key in dictionary.keys
     return
 
 # write a function which checks whether given value is stored in the
