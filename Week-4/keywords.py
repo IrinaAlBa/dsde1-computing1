@@ -1,5 +1,9 @@
 '''
 keywords.py
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
 Create functions that use keyword arguments
 with default values.
 '''
@@ -13,6 +17,7 @@ with default values.
 # it returns 'Hello and welcome to <place>'
 # if both user_name and place are provided
 # it returns 'Hello, <user_name>, and welcome to <place>
+<<<<<<< HEAD
 def welcome_message(user_name = 0, place = 0):
     if user_name == 0 and place == 0:
         print("Hello and welcome")
@@ -27,6 +32,8 @@ def list_average(a_list, avg_type):
 
     if avg_type == "mean":
         return
+=======
+>>>>>>> upstream/master
 
 
 # Create a function called list_average()
@@ -34,7 +41,11 @@ def list_average(a_list, avg_type):
 # (the point of this exercise is to practice interacting 
 # with lists)
 # the first argument is a list of numbers
+<<<<<<< HEAD
 # the second optional keyword argument is called avg_type
+=======
+# the second optional keyword arguemt is called avg_type
+>>>>>>> upstream/master
 # if nothing for avg_type provided, return the mean of the list
 # if avg_type='mode', return the mode of the list 
 # (return list of all modes if there is a tie between multiple values)

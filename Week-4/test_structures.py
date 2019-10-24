@@ -1,5 +1,9 @@
 '''
 test_structures.py
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
 Unit tests for structures functions.
 '''
 
