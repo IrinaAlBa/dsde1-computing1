@@ -14,6 +14,10 @@ with default values.
 # if both user_name and place are provided
 # it returns 'Hello, <user_name>, and welcome to <place>
 def welcome_message(user_name = 0, place = 0):
+    """This function gives a welcome message. If no username or place is provided,
+    then the function simply prints 'Hello and welcome'. If a username is provided
+    then 'Hello <user_name> and welcome' will be printed. If both keyword arguments
+    are provided, then 'Hello <user_name> and welcome to <place> will be printed."""
     if user_name == 0 and place == 0:
         print("Hello and welcome")
     if user_name !=0 and place == 0:
@@ -36,6 +40,9 @@ def welcome_message(user_name = 0, place = 0):
 # check if for median one has to sort the list
 
 def list_average(a_list, avg_type = 0):
+    """This function returns the mean of a list if nothing, or 'mean' is called.
+    if 'mode' is called, it returns the mode of the function, and if 'median',
+    it returns the median."""
     n = len(a_list)
     get_sum = sum(a_list)
     mean = get_sum / n
@@ -58,4 +65,4 @@ def list_average(a_list, avg_type = 0):
         else: 
             get_mode = "Mode is / are: " + ', '.join(map(str, mode)) 
     if avg_type == "median":
-        return median
+        print(median)
