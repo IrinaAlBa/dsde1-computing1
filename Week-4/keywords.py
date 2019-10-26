@@ -46,26 +46,29 @@ def list_average(a_list, avg_type = "mean"):
     it returns the median."""
     n = len(a_list)
 
-    if n == 0:
-        raise ValueError("Empty List")
     if not avg_type in ["mean", "median", "mode"]:
         raise ValueError("Unknown avg type")
 
     if avg_type == "mean":
-        return sum(a_list)/n
+        return 0 if n == 0 else sum(a_list)/n
     
     a_list.sort()
     index = n // 2
     if avg_type == "median":
+        if n == 0:
+            return None
         if n % 2:
             return a_list[index]
         else:
             return (a_list[n//2]+a_list[n//2 -1])/2.0
     
+    if n == 0:
+        return []
+        
     mode = max(a_list, key=a_list.count)
     max_count = a_list.count(mode)
     out = []
     for x in set(a_list):
         if a_list.count(x) == max_count:
             out.append(x)
-    return out if len(out)>1 else out[0]
+    return out

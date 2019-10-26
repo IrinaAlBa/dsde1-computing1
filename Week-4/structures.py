@@ -23,7 +23,7 @@ def part_reverse(the_list, beginning, end):
     """This function reverses the second and third parameter and outputs them in a new list"""
     if (end < beginning) or (end >= len(the_list)) or (beginning < 0):
         raise ValueError("improper list indexes")
-    new_list = the_list[beginning:end+1]
+    new_list = the_list[beginning:end]
     new_list.reverse()
     return new_list
 
@@ -98,7 +98,7 @@ def index_exists(dictionary, key):
 # dictionary. Return True or False.
 def value_exists(dictionary, value):
     return value in dictionary.values()
-    
+
 # write a function that returns a new dictionary which contains all the values
 # from dictionary1 and dictionary2.
 def merge_dictionaries(dictionary1, dictionary2):
