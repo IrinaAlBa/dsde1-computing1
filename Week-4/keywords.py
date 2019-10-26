@@ -51,7 +51,7 @@ def list_average(a_list, avg_type = 0):
     get_mode = dict(data) 
     mode = [k for k, v in get_mode.items() if v == max(list(data.values()))]
     if avg_type == 0 or avg_type == "mean":
-        return mean
+        return f'{mean:.2f}'
     if avg_type == "mode":
         if len(mode) == n: 
             get_mode = "No mode found"
