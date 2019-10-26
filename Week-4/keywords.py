@@ -18,9 +18,22 @@ def welcome_message(user_name = 0, place = 0):
         print("Hello and welcome")
     if user_name !=0 and place == 0:
         print("Hello " + str(user_name) + " and welcome")
-    if user_name != 0 and place == 0:
+    if user_name != 0 and place != 0:
         print("Hello " + str(user_name) + " and welcome to " + str(place))
 
+# Create a function called list_average()
+# without using any libraries to do the maths for you 
+# (the point of this exercise is to practice interacting 
+# with lists)
+# the first argument is a list of numbers
+# the second optional keyword argument is called avg_type
+# if nothing for avg_type provided, return the mean of the list
+# if avg_type='mode', return the mode of the list 
+# (return list of all modes if there is a tie between multiple values)
+# if avg_type='mean', return the mean of the list
+# if avg_type='median', return the median of this list
+
+# check if for median one has to sort the list
 
 def list_average(a_list, avg_type = 0):
     n = len(a_list)
@@ -46,17 +59,3 @@ def list_average(a_list, avg_type = 0):
             get_mode = "Mode is / are: " + ', '.join(map(str, mode)) 
     if avg_type == "median":
         return median
-
-# Create a function called list_average()
-# without using any libraries to do the maths for you 
-# (the point of this exercise is to practice interacting 
-# with lists)
-# the first argument is a list of numbers
-# the second optional keyword argument is called avg_type
-# if nothing for avg_type provided, return the mean of the list
-# if avg_type='mode', return the mode of the list 
-# (return list of all modes if there is a tie between multiple values)
-# if avg_type='mean', return the mean of the list
-# if avg_type='median', return the median of this list
-
-# check if for median one has to sort the list
