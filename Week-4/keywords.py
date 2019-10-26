@@ -13,17 +13,18 @@ with default values.
 # it returns 'Hello and welcome to <place>'
 # if both user_name and place are provided
 # it returns 'Hello, <user_name>, and welcome to <place>
-def welcome_message(user_name = 0, place = 0):
+def welcome_message(user_name = "", place = ""):
     """This function gives a welcome message. If no username or place is provided,
     then the function simply prints 'Hello and welcome'. If a username is provided
     then 'Hello <user_name> and welcome' will be printed. If both keyword arguments
     are provided, then 'Hello <user_name> and welcome to <place> will be printed."""
-    if user_name == 0 and place == 0:
-        print("Hello and welcome")
-    if user_name !=0 and place == 0:
-        print("Hello " + str(user_name) + " and welcome")
-    if user_name != 0 and place != 0:
-        print("Hello " + str(user_name) + " and welcome to " + str(place))
+    user = str(user_name)
+    if user:
+        user = f', {user},'
+    location = str(place)
+    if location:
+        location = f' to {location}'
+    return f"Hello{user} and welcome{location}"
 
 # Create a function called list_average()
 # without using any libraries to do the maths for you 
@@ -39,30 +40,32 @@ def welcome_message(user_name = 0, place = 0):
 
 # check if for median one has to sort the list
 
-def list_average(a_list, avg_type = 0):
+def list_average(a_list, avg_type = "mean"):
     """This function returns the mean of a list if nothing, or 'mean' is called.
     if 'mode' is called, it returns the mode of the function, and if 'median',
     it returns the median."""
     n = len(a_list)
-    get_sum = sum(a_list)
-    mean = get_sum / n
+
+    if n == 0:
+        raise ValueError("Empty List")
+    if not avg_type in ["mean", "median", "mode"]:
+        raise ValueError("Unknown avg type")
+
+    if avg_type == "mean":
+        return sum(a_list)/n
+    
     a_list.sort()
-    if n % 2 == 0: 
-        median1 = a_list[n//2] 
-        median2 = a_list[n//2 - 1] 
-        median = (median1 + median2)/2
-    else:
-        median = a_list[n//2]
-    from collections import Counter
-    data = Counter(a_list)
-    get_mode = dict(data) 
-    mode = [k for k, v in get_mode.items() if v == max(list(data.values()))]
-    if avg_type == 0 or avg_type == "mean":
-        return f'{mean:.2f}'
-    if avg_type == "mode":
-        if len(mode) == n: 
-            get_mode = "No mode found"
-        else: 
-            get_mode = "Mode is / are: " + ', '.join(map(str, mode)) 
+    index = n // 2
     if avg_type == "median":
-        print(median)
+        if n % 2:
+            return a_list[index]
+        else:
+            return (a_list[n//2]+a_list[n//2 -1])/2.0
+    
+    mode = max(a_list, key=a_list.count)
+    max_count = a_list.count(mode)
+    out = []
+    for x in set(a_list):
+        if a_list.count(x) == max_count:
+            out.append(x)
+    return out if len(out)>1 else out[0]
